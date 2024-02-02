@@ -1,5 +1,15 @@
 $(document).ready(function() {
     createGrid(16);
+
+    $("#resize").click(function() {
+        var newSize = prompt("Enter the new grid size:");
+        newSize = parseInt(newSize); // Convert input to a number
+
+        if (!isNaN(newSize) && newSize > 0) {
+            clearGrid();
+            createGrid(Math.min(newSize, 100)); // Limit size to a maximum of 100
+        }
+    });
 });
 
 function createGrid(size) {
@@ -23,4 +33,8 @@ function createGrid(size) {
         }
         container.append(row);
     }
+}
+
+function clearGrid() {
+    $(".container").empty();
 }

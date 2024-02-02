@@ -26,3 +26,15 @@ body {
 .square.active {
     background-color: black; /* Background color for permanently active squares */
 }
+
+#resize {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
