@@ -19,15 +19,18 @@ function createGrid(size) {
         var row = $("<div class='row'></div>");
         for (var j = 0; j < size; j++) {
             var square = $("<div class='square'></div>");
+            square.data("darkness", 0); // Initialize darkness level
 
-            square.on({
-                mouseenter: function() {
-                    $(this).addClass("active");
-                },
-                mouseleave: function() {
-                    // Do nothing on mouse leave
+            square.hover(
+                function() {
+                    var currentDarkness = $(this).data("darkness");
+                    if (currentDarkness < 1) {
+                        currentDarkness += 0.1;
+                        $(this).css("background-color", "rgba(45, 30, 60, " + currentDarkness + ")");
+                        $(this).data("darkness", currentDarkness);
+                    }
                 }
-            });
+            );
 
             row.append(square);
         }

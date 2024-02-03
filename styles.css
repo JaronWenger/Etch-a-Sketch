@@ -18,14 +18,12 @@ body {
     box-sizing: border-box;
     margin: 1px; /* Margin to create a gap between squares */
     background-color: #fff; /* Default background color of the squares */
+
     border: 1px solid #ccc; /* Border color of the squares */
     transition: background-color .3s; /* Smooth transition for hover effect */
 }
 
 
-.square.active {
-    background-color: black; /* Background color for permanently active squares */
-}
 
 #resize {
     position: fixed;
